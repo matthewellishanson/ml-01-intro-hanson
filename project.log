@@ -198,3 +198,262 @@ dtype: int64
 2  Adelie  Torgersen            40.3           18.0              195.0       3250.0  Female
 3  Adelie  Torgersen             NaN            NaN                NaN          NaN     NaN
 4  Adelie  Torgersen            36.7           19.3              193.0       3450.0  Female
+2026-07-05 22:08:19 | INFO | M01 | Loading custom dataset from: C:\Users\mehan\code\repos\ml-01-intro-hanson\data\raw\global_extreme_weather_socioeconomic_2015_2025.csv
+2026-07-05 22:08:19 | INFO | M01 | Loaded: 162 rows (instances), 26 columns
+2026-07-05 22:08:19 | DEBUG | M01 | Column names: ['event_start_date', 'event_end_date', 'event_year', 'event_month', 'season', 'duration_days', 'country', 'iso3', 'continent', 'sub_region', 'disaster_type', 'disaster_category', 'severity_class', 'total_deaths', 'total_affected', 'total_displaced', 'deaths_per_million', 'affected_pct_population', 'economic_damage_usd', 'damage_pct_gdp', 'country_gdp_usd', 'gdp_per_capita_usd', 'country_population', 'hdi_income_proxy', 'income_group', 'event_description']
+2026-07-05 22:08:19 | DEBUG | M01 | First few rows:
+  event_start_date event_end_date  event_year  event_month  season  duration_days                 country iso3  \
+0       2015-01-01     2015-12-31        2015            1  Winter            365                   Nepal  NPL   
+1       2015-01-01     2015-03-31        2015            1  Winter             90              Mozambique  MOZ   
+2       2015-01-01     2015-12-31        2015            1  Winter            365               Indonesia  IDN   
+3       2015-03-01     2015-04-30        2015            3  Spring             61                 Vanuatu  VUT   
+4       2015-04-01     2015-06-30        2015            4  Spring             91  Bosnia and Herzegovina  BIH   
+
+  continent          sub_region   disaster_type disaster_category severity_class  total_deaths  total_affected  \
+0      Asia       Southern Asia         Drought    Climatological       Moderate             0         2800000   
+1    Africa  Sub-Saharan Africa           Flood      Hydrological       Moderate           139          230000   
+2      Asia  South-eastern Asia        Wildfire    Climatological          Minor            19          500000   
+3   Oceania           Melanesia  Tropical Storm    Meteorological          Minor            11          188000   
+4    Europe     Southern Europe           Flood      Hydrological       Moderate            61          950000   
+
+   total_displaced  deaths_per_million  affected_pct_population  economic_damage_usd  damage_pct_gdp  country_gdp_usd  \
+0                0                0.00                   10.063               800000          0.0033     2.436080e+10   
+1            25000                5.24                    0.866                71000          0.0004     1.620899e+10   
+2                0                0.07                    0.191             16100000          0.0019     8.608542e+11   
+3            60000               41.34                   70.650               450000          0.0616     7.308708e+08   
+4                0               17.34                   27.000              1500000          0.0091     1.640435e+10   
+
+   gdp_per_capita_usd  country_population  hdi_income_proxy         income_group  \
+0               876.0          27823629.0             0.328           Low income   
+1               611.0          26547572.0             0.273           Low income   
+2              3288.0         261799249.0             0.528  Lower-middle income   
+3              2747.0            266101.0             0.500  Lower-middle income   
+4              4662.0           3518541.0             0.580  Upper-middle income   
+
+                                   event_description  
+0  Severe drought affecting food production acros...  
+1             Tropical cyclone Chedza related floods  
+2           Peat and forest fires — worst in decades  
+3                  Tropical Cyclone Pam — Category 5  
+4                 Balkan floods — worst in 120 years  
+2026-07-05 22:08:19 | INFO | M01 | Features: ['season', 'duration_days', 'event_start_date', 'event_end_date', 'disaster_type', 'disaster_category', 'population', 'gdp_per_capita_usd']
+2026-07-05 22:08:19 | INFO | M01 | Potential targets: ['severity_class', 'total_affected']
+2026-07-05 22:09:38 | INFO | M01 | Instances (rows): 162
+2026-07-05 22:09:38 | INFO | M01 | Columns:          26
+2026-07-05 22:09:38 | INFO | M01 | Numeric columns:      ['event_year', 'event_month', 'duration_days', 'total_deaths', 'total_affected', 'total_displaced', 'deaths_per_million', 'affected_pct_population', 'economic_damage_usd', 'damage_pct_gdp', 'country_gdp_usd', 'gdp_per_capita_usd', 'country_population', 'hdi_income_proxy']
+2026-07-05 22:09:38 | INFO | M01 | Categorical columns:   ['event_start_date', 'event_end_date', 'season', 'country', 'iso3', 'continent', 'sub_region', 'disaster_type', 'disaster_category', 'severity_class', 'income_group', 'event_description']
+2026-07-05 22:09:38 | INFO | M01 | Missing values by column:
+event_start_date           0
+event_end_date             0
+event_year                 0
+event_month                0
+season                     0
+duration_days              0
+country                    0
+iso3                       0
+continent                  2
+sub_region                 2
+disaster_type              0
+disaster_category          0
+severity_class             0
+total_deaths               0
+total_affected             0
+total_displaced            0
+deaths_per_million         2
+affected_pct_population    2
+economic_damage_usd        0
+damage_pct_gdp             2
+country_gdp_usd            2
+gdp_per_capita_usd         2
+country_population         2
+hdi_income_proxy           2
+income_group               0
+event_description          0
+dtype: int64
+2026-07-05 22:09:38 | INFO | M01 | Missing values across all columns: 18
+2026-07-05 22:09:38 | DEBUG | M01 | First rows:
+2026-07-05 22:09:38 | DEBUG | M01 | 
+  event_start_date event_end_date  event_year  event_month  season  duration_days                 country iso3  \
+0       2015-01-01     2015-12-31        2015            1  Winter            365                   Nepal  NPL   
+1       2015-01-01     2015-03-31        2015            1  Winter             90              Mozambique  MOZ   
+2       2015-01-01     2015-12-31        2015            1  Winter            365               Indonesia  IDN   
+3       2015-03-01     2015-04-30        2015            3  Spring             61                 Vanuatu  VUT   
+4       2015-04-01     2015-06-30        2015            4  Spring             91  Bosnia and Herzegovina  BIH   
+
+  continent          sub_region   disaster_type disaster_category severity_class  total_deaths  total_affected  \
+0      Asia       Southern Asia         Drought    Climatological       Moderate             0         2800000   
+1    Africa  Sub-Saharan Africa           Flood      Hydrological       Moderate           139          230000   
+2      Asia  South-eastern Asia        Wildfire    Climatological          Minor            19          500000   
+3   Oceania           Melanesia  Tropical Storm    Meteorological          Minor            11          188000   
+4    Europe     Southern Europe           Flood      Hydrological       Moderate            61          950000   
+
+   total_displaced  deaths_per_million  affected_pct_population  economic_damage_usd  damage_pct_gdp  country_gdp_usd  \
+0                0                0.00                   10.063               800000          0.0033     2.436080e+10   
+1            25000                5.24                    0.866                71000          0.0004     1.620899e+10   
+2                0                0.07                    0.191             16100000          0.0019     8.608542e+11   
+3            60000               41.34                   70.650               450000          0.0616     7.308708e+08   
+4                0               17.34                   27.000              1500000          0.0091     1.640435e+10   
+
+   gdp_per_capita_usd  country_population  hdi_income_proxy         income_group  \
+0               876.0          27823629.0             0.328           Low income   
+1               611.0          26547572.0             0.273           Low income   
+2              3288.0         261799249.0             0.528  Lower-middle income   
+3              2747.0            266101.0             0.500  Lower-middle income   
+4              4662.0           3518541.0             0.580  Upper-middle income   
+
+                                   event_description  
+0  Severe drought affecting food production acros...  
+1             Tropical cyclone Chedza related floods  
+2           Peat and forest fires — worst in decades  
+3                  Tropical Cyclone Pam — Category 5  
+4                 Balkan floods — worst in 120 years  
+2026-07-05 22:13:48 | INFO | M01 | Instances (rows): 162
+2026-07-05 22:13:48 | INFO | M01 | Columns:          26
+2026-07-05 22:13:48 | INFO | M01 | Numeric columns:      ['event_year', 'event_month', 'duration_days', 'total_deaths', 'total_affected', 'total_displaced', 'deaths_per_million', 'affected_pct_population', 'economic_damage_usd', 'damage_pct_gdp', 'country_gdp_usd', 'gdp_per_capita_usd', 'country_population', 'hdi_income_proxy']
+2026-07-05 22:13:48 | INFO | M01 | Categorical columns:   ['event_start_date', 'event_end_date', 'season', 'country', 'iso3', 'continent', 'sub_region', 'disaster_type', 'disaster_category', 'severity_class', 'income_group', 'event_description']
+2026-07-05 22:13:48 | INFO | M01 | Missing values by column:
+event_start_date           0
+event_end_date             0
+event_year                 0
+event_month                0
+season                     0
+duration_days              0
+country                    0
+iso3                       0
+continent                  2
+sub_region                 2
+disaster_type              0
+disaster_category          0
+severity_class             0
+total_deaths               0
+total_affected             0
+total_displaced            0
+deaths_per_million         2
+affected_pct_population    2
+economic_damage_usd        0
+damage_pct_gdp             2
+country_gdp_usd            2
+gdp_per_capita_usd         2
+country_population         2
+hdi_income_proxy           2
+income_group               0
+event_description          0
+dtype: int64
+2026-07-05 22:13:48 | INFO | M01 | Missing values across all columns: 18
+2026-07-05 22:13:48 | DEBUG | M01 | First rows:
+2026-07-05 22:13:48 | DEBUG | M01 | 
+  event_start_date event_end_date  event_year  event_month  season  duration_days                 country iso3  \
+0       2015-01-01     2015-12-31        2015            1  Winter            365                   Nepal  NPL   
+1       2015-01-01     2015-03-31        2015            1  Winter             90              Mozambique  MOZ   
+2       2015-01-01     2015-12-31        2015            1  Winter            365               Indonesia  IDN   
+3       2015-03-01     2015-04-30        2015            3  Spring             61                 Vanuatu  VUT   
+4       2015-04-01     2015-06-30        2015            4  Spring             91  Bosnia and Herzegovina  BIH   
+
+  continent          sub_region   disaster_type disaster_category severity_class  total_deaths  total_affected  \
+0      Asia       Southern Asia         Drought    Climatological       Moderate             0         2800000   
+1    Africa  Sub-Saharan Africa           Flood      Hydrological       Moderate           139          230000   
+2      Asia  South-eastern Asia        Wildfire    Climatological          Minor            19          500000   
+3   Oceania           Melanesia  Tropical Storm    Meteorological          Minor            11          188000   
+4    Europe     Southern Europe           Flood      Hydrological       Moderate            61          950000   
+
+   total_displaced  deaths_per_million  affected_pct_population  economic_damage_usd  damage_pct_gdp  country_gdp_usd  \
+0                0                0.00                   10.063               800000          0.0033     2.436080e+10   
+1            25000                5.24                    0.866                71000          0.0004     1.620899e+10   
+2                0                0.07                    0.191             16100000          0.0019     8.608542e+11   
+3            60000               41.34                   70.650               450000          0.0616     7.308708e+08   
+4                0               17.34                   27.000              1500000          0.0091     1.640435e+10   
+
+   gdp_per_capita_usd  country_population  hdi_income_proxy         income_group  \
+0               876.0          27823629.0             0.328           Low income   
+1               611.0          26547572.0             0.273           Low income   
+2              3288.0         261799249.0             0.528  Lower-middle income   
+3              2747.0            266101.0             0.500  Lower-middle income   
+4              4662.0           3518541.0             0.580  Upper-middle income   
+
+                                   event_description  
+0  Severe drought affecting food production acros...  
+1             Tropical cyclone Chedza related floods  
+2           Peat and forest fires — worst in decades  
+3                  Tropical Cyclone Pam — Category 5  
+4                 Balkan floods — worst in 120 years  
+2026-07-05 22:22:08 | INFO | M01 | Regression model trained: RandomForestRegressor
+2026-07-05 22:22:08 | INFO | M01 | Target: total_affected
+2026-07-05 22:22:08 | INFO | M01 | Features: ['duration_days', 'season', 'event_start_date', 'event_end_date', 'country_population', 'gdp_per_capita_usd', 'disaster_type', 'disaster_category']
+2026-07-05 22:22:08 | INFO | M01 | MAE:  4,554,166.83
+2026-07-05 22:22:08 | INFO | M01 | RMSE: 9,378,012.21
+2026-07-05 22:22:08 | INFO | M01 | R^2:  -0.113
+2026-07-05 22:27:08 | INFO | M01 | Regression model trained: RandomForestRegressor
+2026-07-05 22:27:08 | INFO | M01 | Target: total_affected
+2026-07-05 22:27:08 | INFO | M01 | Features: ['duration_days', 'season', 'event_start_date', 'event_end_date', 'country_population', 'gdp_per_capita_usd', 'disaster_type', 'disaster_category']
+2026-07-05 22:27:08 | INFO | M01 | MAE:  4,554,166.83
+2026-07-05 22:27:08 | INFO | M01 | RMSE: 9,378,012.21
+2026-07-05 22:27:08 | INFO | M01 | R^2:  -0.113
+2026-07-05 22:33:49 | INFO | M01 | Instances (rows): 162
+2026-07-05 22:33:49 | INFO | M01 | Columns:          26
+2026-07-05 22:33:49 | INFO | M01 | Numeric columns:      ['event_year', 'event_month', 'duration_days', 'total_deaths', 'total_affected', 'total_displaced', 'deaths_per_million', 'affected_pct_population', 'economic_damage_usd', 'damage_pct_gdp', 'country_gdp_usd', 'gdp_per_capita_usd', 'country_population', 'hdi_income_proxy']
+2026-07-05 22:33:49 | INFO | M01 | Categorical columns:   ['event_start_date', 'event_end_date', 'season', 'country', 'iso3', 'continent', 'sub_region', 'disaster_type', 'disaster_category', 'severity_class', 'income_group', 'event_description']
+2026-07-05 22:33:49 | INFO | M01 | Missing values by column:
+event_start_date           0
+event_end_date             0
+event_year                 0
+event_month                0
+season                     0
+duration_days              0
+country                    0
+iso3                       0
+continent                  2
+sub_region                 2
+disaster_type              0
+disaster_category          0
+severity_class             0
+total_deaths               0
+total_affected             0
+total_displaced            0
+deaths_per_million         2
+affected_pct_population    2
+economic_damage_usd        0
+damage_pct_gdp             2
+country_gdp_usd            2
+gdp_per_capita_usd         2
+country_population         2
+hdi_income_proxy           2
+income_group               0
+event_description          0
+dtype: int64
+2026-07-05 22:33:49 | INFO | M01 | Missing values across all columns: 18
+2026-07-05 22:33:49 | DEBUG | M01 | First rows:
+2026-07-05 22:33:49 | DEBUG | M01 | 
+  event_start_date event_end_date  event_year  event_month  season  duration_days                 country iso3  \
+0       2015-01-01     2015-12-31        2015            1  Winter            365                   Nepal  NPL   
+1       2015-01-01     2015-03-31        2015            1  Winter             90              Mozambique  MOZ   
+2       2015-01-01     2015-12-31        2015            1  Winter            365               Indonesia  IDN   
+3       2015-03-01     2015-04-30        2015            3  Spring             61                 Vanuatu  VUT   
+4       2015-04-01     2015-06-30        2015            4  Spring             91  Bosnia and Herzegovina  BIH   
+
+  continent          sub_region   disaster_type disaster_category severity_class  total_deaths  total_affected  \
+0      Asia       Southern Asia         Drought    Climatological       Moderate             0         2800000   
+1    Africa  Sub-Saharan Africa           Flood      Hydrological       Moderate           139          230000   
+2      Asia  South-eastern Asia        Wildfire    Climatological          Minor            19          500000   
+3   Oceania           Melanesia  Tropical Storm    Meteorological          Minor            11          188000   
+4    Europe     Southern Europe           Flood      Hydrological       Moderate            61          950000   
+
+   total_displaced  deaths_per_million  affected_pct_population  economic_damage_usd  damage_pct_gdp  country_gdp_usd  \
+0                0                0.00                   10.063               800000          0.0033     2.436080e+10   
+1            25000                5.24                    0.866                71000          0.0004     1.620899e+10   
+2                0                0.07                    0.191             16100000          0.0019     8.608542e+11   
+3            60000               41.34                   70.650               450000          0.0616     7.308708e+08   
+4                0               17.34                   27.000              1500000          0.0091     1.640435e+10   
+
+   gdp_per_capita_usd  country_population  hdi_income_proxy         income_group  \
+0               876.0          27823629.0             0.328           Low income   
+1               611.0          26547572.0             0.273           Low income   
+2              3288.0         261799249.0             0.528  Lower-middle income   
+3              2747.0            266101.0             0.500  Lower-middle income   
+4              4662.0           3518541.0             0.580  Upper-middle income   
+
+                                   event_description  
+0  Severe drought affecting food production acros...  
+1             Tropical cyclone Chedza related floods  
+2           Peat and forest fires — worst in decades  
+3                  Tropical Cyclone Pam — Category 5  
+4                 Balkan floods — worst in 120 years  
